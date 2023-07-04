@@ -5,14 +5,10 @@ include 'conf/koneksi.php'; //menghubungkan ke koneksi database
 echo 'session<br>';
 var_dump($_SESSION);
 
-// echo '<br>post<br>';
-// var_dump($_POST);
 
 $nama = $_SESSION['username'];
 $keranjang = $_SESSION['keranjang'];
 
-$q = $koneksi->query(" select * from user where username='$nama' ")->fetch_assoc();
-$alamat = $q['alamat'];
 
 $n = 20;
 $kode_order = bin2hex(random_bytes($n));
@@ -42,25 +38,4 @@ else {
   alert("Tidak dapat menyimpan, data belum lengkap!");
     </script>';
 }
-
-echo "<script>window.alert('Pembelian Sukses!')</script>";
-echo "<script>location= 'checkout.php</script>";
-
-
-
-
-
-
-  
-
-  // if(!empty($nama) && !empty($alamat)){
-  //   $q = "INSERT INTO alamat (nama_penerima,	alamat_lengkap)values('$nama','$alamat')";
-  //   $simpan = mysqli_query($koneksi, $q);
-    
-  // } 
-  // else {
-  //   echo '<script type="text/JavaScript"> 
-  //   alert("Tidak dapat menyimpan, data belum lengkap!");
-  //     </script>';
-  // }   
 ?>
