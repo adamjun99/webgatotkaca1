@@ -5,7 +5,7 @@
 </head>
 <body>
   <h1>Formulir Pendaftaran</h1>
-  <form method="POST" action="Pendaftaran.php"></form>
+  <form method="POST" action="PendaftaranProses.php">
     <label for="nama">Nama:</label>
     <input type="text" id="nama" name="nama" required><br><br>
 
@@ -59,7 +59,10 @@
     <label for="akun_instagram">Akun Instagram:</label>
     <input type="text" id="akun_instagram" name="akun_instagram" required><br><br>
 
-    <input type="submit" value="Daftar">
+    <label for="foto">Foto:</label>
+    <input type="file" id="foto" name="foto" accept="image/*" required><br><br>
+
+    <input type="submit" name="submit" value="Daftar">
     </form>
 </body>
 </html>
